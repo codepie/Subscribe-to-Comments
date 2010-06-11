@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Subscribe To Comments
-Version: 2.1.2
-Plugin URI: http://txfx.net/code/wordpress/subscribe-to-comments/
-Description: Allows readers to receive notifications of new comments that are posted to an entry.  Based on version 1 from <a href="http://scriptygoddess.com/">Scriptygoddess</a>
-Author: Mark Jaquith
-Author URI: http://txfx.net/
+Plugin Name: Comment Subscription
+Version: 1.0
+Plugin URI: http://www.hvtuananh.com
+Description: Allows readers to receive notifications of new comments that are posted to an entry.
+Author: Tuan-Anh Hoang-Vu
+Author URI: http://www.hvtuananh.com
 */
 
 /* This is the code that is inserted into the comment form */
