@@ -644,7 +644,7 @@ class sg_subscribe {
 
 
 	function send_mail($to, $subject, $message) {
-		$subject = '[' . get_bloginfo('name') . '] ' . $subject;
+		// $subject = '[' . get_bloginfo('name') . '] ' . $subject;
 
 		// strip out some chars that might cause issues, and assemble vars
 		$site_name = str_replace('"', "'", $this->site_name);
