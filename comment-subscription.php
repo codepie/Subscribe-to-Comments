@@ -15,7 +15,7 @@ function show_subscription_checkbox ($id='0') {
 
 	if ( $sg_subscribe->checkbox_shown ) return $id;
 	if ( !$email = $sg_subscribe->current_viewer_subscription_status() ) :
-		$checked_status = ( !empty($_COOKIE['subscribe_checkbox_'.COOKIEHASH]) && 'checked' == $_COOKIE['subscribe_checkbox_'.COOKIEHASH] ) ? true : false;
+		$checked_status = ( empty($_COOKIE['subscribe_checkbox_'.COOKIEHASH]) || ( !empty($_COOKIE['subscribe_checkbox_'.COOKIEHASH]) && 'checked' == $_COOKIE['subscribe_checkbox_'.COOKIEHASH] ) ) ? true : false;
 	?>
 
 <?php /* ------------------------------------------------------------------- */ ?>
@@ -138,7 +138,7 @@ class sg_subscribe_settings {
 		}
 
 
-		echo '<h2>'.__('Subscribe to Comments Options','subscribe-to-comments').'</h2>';
+		echo '<h2>'.__('Comment Subscription Options','subscribe-to-comments').'</h2>';
 		echo '<ul>';
 
 		echo '<li><label for="name">' . __('"From" name for notifications:', 'subscribe-to-comments') . ' <input type="text" size="40" id="name" name="sg_subscribe_settings[name]" value="' . sg_subscribe_settings::form_setting('name') . '" /></label></li>';
@@ -800,7 +800,7 @@ class sg_subscribe {
 	function add_admin_menu() {
 		add_management_page(__('Comment Subscription Manager', 'subscribe-to-comments'), __('Subscriptions', 'subscribe-to-comments'), 8, 'stc-management', 'sg_subscribe_admin');
 
-		add_options_page(__('Subscribe to Comments', 'subscribe-to-comments'), __('Subscribe to Comments', 'subscribe-to-comments'), 5, 'stc-options', array('sg_subscribe_settings', 'options_page'));
+		add_options_page(__('Comment Subscription', 'subscribe-to-comments'), __('Comment Subscription', 'subscribe-to-comments'), 5, 'stc-options', array('sg_subscribe_settings', 'options_page'));
 	}
 
 
