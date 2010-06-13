@@ -941,6 +941,18 @@ function sg_subscribe_admin($standalone = false) {
 	if ( $sg_subscribe->standalone ) {
 		if ( !$sg_subscribe->use_wp_style && !empty($sg_subscribe->header) ) {
 		@include($sg_subscribe->header);
+        echo '<style type="text/css">
+			.wrap p {
+                font-size:1.4em;
+                margin:0 0 0.5em;
+            }
+            .wrap li {
+                font-size:1.4em;
+            }
+            .wrap legend {
+                font-size:2em;
+            }
+		</style>';
 		echo $sg_subscribe->before_manager;
 	} else { ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	<html>
